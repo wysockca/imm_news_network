@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>IMM News Network</title>
+		<meta charset="UTF-8" />
+
+		<meta name="description" content="News and helpful articles for those in, or have an interest in, the web design and development industry.">
+
+		<meta name="keywords" content="web, web design, web development, ux, ui, ux design, ui design, tech, internet, mobile, apps, applications">
+
+		<link rel="author" content="Carly Wysocki" href="http://carlywysocki.com/" />
+		<!--<link rel="canonical" href="" />-->
+
+		<link rel="icon" href="" sizes="">
+	</head>
+	<body>
+		<header>
+			<a href="/"><img src="" /></a>
+			<nav>
+				<ul>
+					<li><a href="">Login</a></li>
+					<li><a href="">Sign Up</a></li>
+				</ul>
+			</nav>
+		</header>
+		<nav>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+		</nav>
+		<main>
+			<h1>Contact Us</h1>
+			<form action="process-contact.php" method="POST">
+				<fieldset>
+					First name:<input type="text" name="firstName" />
+					Last name:<input type="text" name="lastName" />
+					Email:<input type="email" name="email" />
+				</fieldset>
+				Message:<textarea></textarea>
+				<fieldset>
+					<legend>Interests:</legend>
+					<input type="checkbox" name="interest" value="tech" />Tech
+					<input type="checkbox" name="interest" value="industry" />Industry
+					<input type="checkbox" name="interest" value="design" />Design
+				</fieldset>
+				<fieldset>
+					<legend>Your role:</legend>
+					<input type="radio" name="role" value="writer">Writer
+					<input type="radio" name="role" value="contributor">Contributor
+					<input type="radio" name="role" value="administrator">Administrator
+				</fieldset>
+				<input type="submit" />
+			</form>
+			<aside>
+				<h4>Social Media</h4>
+				<ul>
+					<li><a href="https://twitter.com/SheridanIMM">Twitter</a></li>
+					<li><a href="https://www.facebook.com/sheridanIMM">Facebook</a></li>
+				</ul>
+
+				<h4>Visitors</h4>
+				<table border="1">
+					<tr>
+						<td>Month</td>
+						<td>Visitors</td>
+					</tr>
+					<tr>
+						<td>Qwerty</td>
+						<td>12345</td>
+					</tr>
+				</table>
+			</aside>
+		</main>
+		<footer>
+			<div>
+				<p>&copy;2018 IMM News Network</p>
+			</div>
+			<div>
+				<p>IMM News Network uses cookies in order to give you the best user experience. By continuing to browse our website, we assume that you consent to our Cookie Policy.</p>
+				<a href="#"><button name="accept">Accept Cookies</button></a>
+			</div>
+		</footer>
+	</body>
+</html>
