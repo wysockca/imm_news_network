@@ -12,6 +12,6 @@
 	</head>
 	<body>
 		<p>You've logged out.</p>
-		<p><a href="front.html">Click here</a> to return to the homepage.</p>
+		<p><a href="front.php">Click here</a> to return to the homepage.</p>
 	</body>
 </html>

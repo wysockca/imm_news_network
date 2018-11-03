@@ -24,10 +24,10 @@ if($row = $stmt->fetch()){
 	$_SESSION['role'] = $row['role'];
 	$_SESSION['id'] = $row['id'];
 
-	header("Location: front.html");
+	header("Location: front.php");
 
 }else{
 	//redirect to login page if invalid
-	header("Location: login.html");
+	header("Location: login.php");
 }
 ?>

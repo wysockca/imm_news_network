@@ -14,6 +14,6 @@ $stmt = $pdo->prepare("INSERT INTO `user` (`id`, `username`, `email`, `password`
 
 $stmt->execute();
 
-header("Location: success.html");
+header("Location: signup-success.php");
 
 ?>
