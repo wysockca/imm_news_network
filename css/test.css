@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik:400,400i,500,700');
+
+body{
+	background-image: url("../images/wavy-dots.png");
+	background-color: #dcdcdc;
+	font-size: 16px;
+	font-family: 'Rubik', sans-serif;
+	font-weight: 400;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+  	grid-gap: 10px;
+}
+
+h1, h2, h3{
+	font-family: 'Rubik', sans-serif;
+	font-weight: 700;
+}
+
+h2 > a, h3 > a{
+	text-decoration: none;
+}
+
+ul {
+	display: flex;
+	justify-content: flex-end;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li{
+	padding-left: 20px;
+}
+
+main, article{
+	background-color: #fff;
+}
+
+header, footer{
+	background-color: #000;
+	color: #fff;
+	padding: 20px;
+}
+
+.hero, main, aside, article{
+	padding:20px;
+}
+
+header{
+	grid-column: 1 / -1;
+  	grid-row: 1;
+
+  	display: grid;
+	grid-template-columns: 1fr, auto;
+  	grid-gap: 10px;
+}
+
+#logo{
+	grid-column: 1;
+  	grid-row: 1;
+  	width: 30%;
+}
+
+nav{
+	grid-column: 2;
+	grid-row: 1;
+	align-self: end;
+}
+
+.hero{
+	grid-column: 1 / -1;
+  	grid-row: 2;
+  	justify-self: center;
+  	text-align: center;
+}
+
+main{
+	grid-column: 1 / 5;
+	grid-row: 3;
+}
+
+aside{
+	grid-column: 5 / 6;
+	grid-row: 3;
+}
+
+footer{
+	grid-column: 1 / -1;
+	grid-row: 4;
+}
+
+#categories{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+  	grid-gap: 10px;
+}
+
+
+
+#featured>img{
+	width:50%;
+}
+
+.thumbnail{
+	width:100%;
+}

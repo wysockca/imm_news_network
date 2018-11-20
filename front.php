@@ -41,12 +41,16 @@ $stmt5->execute();
 		<link rel="canonical" href="http://wysockca.dev.fast.sheridanc.on.ca/IMM-web-dev/imm_news_network/front.php" />
 
 		<link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32">
+		<link rel="stylesheet" href="css/main.css">
 	</head>
 	<body>
 		<header>
-			<a href="front.php"><img src="images/immnn-logo.png" width="20%" /></a>
+			<a href="front.php"><img id="logo" src="images/logo_white.png" /></a>
 			<nav>
 				<ul>
+					<li><a href="front.php">Home</a></li>
+					<li><a href="about.php">About</a></li>
+					<li><a href="contact.php">Contact</a></li>
 					<li><a href="login.php">Login</a></li>
 					<li><a href="signup.php">Sign Up</a></li>
 					<li><a href="dashboard.php">Dashboard</a></li>
@@ -54,97 +58,71 @@ $stmt5->execute();
 				</ul>
 			</nav>
 		</header>
-
-		<nav>
-			<ul>
-				<li><a href="front.php">Home</a></li>
-				<li><a href="about.php">About</a></li>
-				<li><a href="contact.php">Contact</a></li>
-			</ul>
-		</nav>
-
-		<section id="welcome">
+		<div class="hero">
 			<h1><?php echo($row["header"]); ?></h1>
 			<p><?php echo($row["content"]); ?></p>
-		</section>
-
+		</div>
 		<main>
-			<section id="featured">
-				<h1>Latest</h1>
+			<h1>Latest</h1>
+			<article id="featured">
 				<?php
 				while($row = $stmt5->fetch()) {
 				?>
-				<article>
-					<h2><a href="articles/article.php?id=<?php echo($row["id"]);?>"><?php echo($row["headline"]);?></a></h2>
-					<p>
-						<span class="author">By <?php echo($row["author"]); ?></span>
-					</p>
-					<img src="images/<?php echo($row["image"]); ?>" width="50%" />
+				<h2><a href="articles/article.php?id=<?php echo($row["id"]);?>"><?php echo($row["headline"]);?></a></h2>
+					<p><span class="author">By <?php echo($row["author"]); ?></span></p>
+					<img src="images/<?php echo($row["image"]); ?>" />
 					<p><?php echo($row["preview"]); ?></p>
-					<p><a href="articles/article.php?id=<?php echo($row["id"]);?>">Read more...</a></p>
-				</article>
-				<? } ?>
-			</section>
-			<section>
-				<section class="column" id="tech">
+					<a href="articles/article.php?id=<?php echo($row["id"]);?>">Read more...</a>
+					<? } ?>
+			</article>
+			<section id="categories">
+				<div class="column" id="tech">
 					<?php
 					while($row = $stmt2->fetch()) {
-						?>
+					?>
 					<article>
 						<h3><a href="articles/article.php?id=<?php echo($row["id"]);?>"><?php echo($row["headline"]);?></a></h3>
-						<p>
-							<span class="author">By <?php echo($row["author"]); ?></span>
-						</p>
-						<img src="images/<?php echo($row["image"]); ?>" width="15%" />
+						<p><span class="author">By <?php echo($row["author"]); ?></span></p>
+						<img class="thumbnail" src="images/<?php echo($row["image"]); ?>" />
 						<p><?php echo($row["preview"]); ?></p>
-						<p><a href="articles/article.php?id=<?php echo($row["id"]);?>">Read more...</a></p>
+						<a href="articles/article.php?id=<?php echo($row["id"]);?>">Read more...</a>
 					</article>
 					<? } ?>
-				</section>
-				<section class="column" id="industry">
+				</div>
+				<div class="column" id="industry">
 					<?php
 					while($row = $stmt3->fetch()) {
-						?>
+					?>
 					<article>
 						<h3><a href="articles/article.php?id=<?php echo($row["id"]);?>"><?php echo($row["headline"]);?></a></h3>
-						<p>
-							<span class="author">By <?php echo($row["author"]); ?></span>
-						</p>
-						<img src="images/<?php echo($row["image"]); ?>" width="15%" />
+						<p><span class="author">By <?php echo($row["author"]); ?></span></p>
+						<img class="thumbnail" src="images/<?php echo($row["image"]); ?>" />
 						<p><?php echo($row["preview"]); ?></p>
-						<p><a href="articles/article.php?id=<?php echo($row["id"]);?>">Read more...</a></p>
+						<a href="articles/article.php?id=<?php echo($row["id"]);?>">Read more...</a>
 					</article>
 					<? } ?>
-				</section>
-				<section class="column" id="design">
+				</div>
+				<div class="column" id="design">
 					<?php
 					while($row = $stmt4->fetch()) {
-						?>
+					?>
 					<article>
 						<h3><a href="articles/article.php?id=<?php echo($row["id"]);?>"><?php echo($row["headline"]);?></a></h3>
-						<p>
-							<span class="author">By <?php echo($row["author"]); ?></span>
-						</p>
-						<img src="images/<?php echo($row["image"]); ?>" width="15%" />
+						<p><span class="author">By <?php echo($row["author"]); ?></span></p>
+						<img class="thumbnail" src="images/<?php echo($row["image"]); ?>" />
 						<p><?php echo($row["preview"]); ?></p>
-						<p><a href="articles/article.php?id=<?php echo($row["id"]);?>">Read more...</a></p>
+						<a href="articles/article.php?id=<?php echo($row["id"]);?>">Read more...</a>
 					</article>
 					<? } ?>
-				</section>
+				</div>
 			</section>
-
-			<section>
-				<h1>Featured Video</h1>
-				<iframe width="560" height="315" src="https://www.youtube.com/embed/rSFNpJJeo4c" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-			</section>
-
-			<aside>
-				<h3>Social Media</h3>
+		</main>
+		<aside>
+			<h3>Social Media</h3>
 				<ul>
 					<li><a href="https://twitter.com/SheridanIMM">Twitter</a></li>
 					<li><a href="https://www.facebook.com/sheridanIMM">Facebook</a></li>
 				</ul>
-
 				<h3>Visitors</h3>
 				<table border="1">
 					<tr>
@@ -176,9 +154,7 @@ $stmt5->execute();
 						<td>536</td>
 					</tr>
 				</table>
-			</aside>
-		</main>
-
+		</aside>
 		<footer>
 			<div>
 				<p>&copy;2018 IMM News Network</p>
@@ -190,3 +166,13 @@ $stmt5->execute();
 		</footer>
 	</body>
 </html>
+
+			
+					
+
+<!-- <section id="video">
+	<h1>Featured Video</h1>
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/rSFNpJJeo4c" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</section> -->
+
+			
