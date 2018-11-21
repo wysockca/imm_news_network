@@ -82,7 +82,7 @@ $stmt5->execute();
 					?>
 					<article>
 						<h3><a href="articles/article.php?id=<?php echo($row["id"]);?>"><?php echo($row["headline"]);?></a></h3>
-						<p><span class="author">By <?php echo($row["author"]); ?></span></p>
+						<p><span class="author" id="tstyle">By <?php echo($row["author"]); ?></span></p>
 						<img class="thumbnail" src="images/<?php echo($row["image"]); ?>" />
 						<p><?php echo($row["preview"]); ?></p>
 						<a href="articles/article.php?id=<?php echo($row["id"]);?>">Read more...</a>
@@ -95,7 +95,7 @@ $stmt5->execute();
 					?>
 					<article>
 						<h3><a href="articles/article.php?id=<?php echo($row["id"]);?>"><?php echo($row["headline"]);?></a></h3>
-						<p><span class="author">By <?php echo($row["author"]); ?></span></p>
+						<p><span class="author" id="istyle">By <?php echo($row["author"]); ?></span></p>
 						<img class="thumbnail" src="images/<?php echo($row["image"]); ?>" />
 						<p><?php echo($row["preview"]); ?></p>
 						<a href="articles/article.php?id=<?php echo($row["id"]);?>">Read more...</a>
@@ -108,7 +108,7 @@ $stmt5->execute();
 					?>
 					<article>
 						<h3><a href="articles/article.php?id=<?php echo($row["id"]);?>"><?php echo($row["headline"]);?></a></h3>
-						<p><span class="author">By <?php echo($row["author"]); ?></span></p>
+						<p><span class="author" id="dstyle">By <?php echo($row["author"]); ?></span></p>
 						<img class="thumbnail" src="images/<?php echo($row["image"]); ?>" />
 						<p><?php echo($row["preview"]); ?></p>
 						<a href="articles/article.php?id=<?php echo($row["id"]);?>">Read more...</a>
