@@ -30,22 +30,22 @@ $row = $stmt->fetch();
 		<link rel="author" content="Carly Wysocki" href="http://carlywysocki.com/" />
 		<link rel="canonical" href="http://wysockca.dev.fast.sheridanc.on.ca/IMM-web-dev/imm_news_network/front.php" />
 
-		<link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32">
-		<link rel="stylesheet" href="css/main.css">
-		<link rel="stylesheet" media="screen and (max-width: 480px)" href="css/small.css" />
+		<link rel="icon" type="../image/png" href="images/favicon-32x32.png" sizes="32x32">
+		<link rel="stylesheet" href="../css/main.css">
+		<link rel="stylesheet" media="screen and (max-width: 480px)" href="../css/small.css" />
 	</head>
 	<body>
 		<header>
-			<a href="front.php"><img src="../images/immnn-logo.png" width="20%" /></a>
+			<a href="front.php"><img src="../images/logo_white.png" width="20%" /></a>
 			<nav class="desktop">
 				<ul>
-					<li><a href="front.php">Home</a></li>
-					<li><a href="about.php">About</a></li>
-					<li><a href="contact.php">Contact</a></li>
-					<li><a href="login.php">Login</a></li>
-					<li><a href="signup.php">Sign Up</a></li>
-					<li><a href="dashboard.php">Dashboard</a></li>
-					<li><a href="logout.php">Log out</a></li>
+					<li><a href="../front.php">Home</a></li>
+					<li><a href="../about.php">About</a></li>
+					<li><a href="../contact.php">Contact</a></li>
+					<li><a href="../login.php">Login</a></li>
+					<li><a href="../signup.php">Sign Up</a></li>
+					<li><a href="../dashboard.php">Dashboard</a></li>
+					<li><a href="../logout.php">Log out</a></li>
 				</ul>
 			</nav>
 			<nav class="mobile">
@@ -65,12 +65,16 @@ $row = $stmt->fetch();
 					<p><a href="<?php echo($row["link"]); ?>">View article source</a></p>
 					<p><a href="front.php">Go back</a></p>
 				</article>
-				<aside>
-					<h3>Social Media</h3>
-					<ul>
-						<li><a href="https://twitter.com/SheridanIMM">Twitter</a></li>
-						<li><a href="https://www.facebook.com/sheridanIMM">Facebook</a></li>
-					</ul>
+			</main>
+			<aside>
+				<h3>Social Media</h3>
+					<div id="social-links">
+						<a href="https://twitter.com/SheridanIMM">Twitter</a>
+						<a href="https://www.facebook.com/sheridanIMM">Facebook</a>
+					</div>
+
+					<h3>Featured Video</h3>
+					<iframe width="100%" src="https://www.youtube.com/embed/rSFNpJJeo4c" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 					<h3>Visitors</h3>
 					<table border="1">
@@ -103,17 +107,16 @@ $row = $stmt->fetch();
 							<td>536</td>
 						</tr>
 					</table>
-				</aside>
-			</main>
+			</aside>
 		</div>
 		<footer>
 			<div id="copyright">
 				<p>&copy;2018 IMM News Network</p>
 			</div>
 			<div id="cookies">
-				<p>IMM News Network uses cookies in order to give you the best user experience. By continuing to browse our website, we assume that you consent to our Cookie Policy.</p>
-				<a href="#">Accept Cookies</a>
+				<p id="msg">IMM News Network uses cookies in order to give you the best user experience. By continuing to browse our website, we assume that you consent to our Cookie Policy. <a id="btn" href="#">Accept Cookies</a></p>
 			</div>
 		</footer>
+		<script src="../js/script.js"></script>
 	</body>
 </html>

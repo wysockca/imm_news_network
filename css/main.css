@@ -15,7 +15,7 @@ h1, h2, h3{
 	font-weight: 700;
 }
 
-h1{
+#front{
 	margin-left: 15px;
 	margin-bottom: -10px;
 }
@@ -179,4 +179,5 @@ nav a:hover{
 
 footer a{
 	color: #fff;
+	text-decoration: underline;
 }

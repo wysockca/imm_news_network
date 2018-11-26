@@ -68,7 +68,7 @@ $stmt5->execute();
 				<p><?php echo($row["content"]); ?></p>
 			</div>
 			<main>
-				<h1>Latest</h1>
+				<h1 id="front">Latest</h1>
 				<article id="featured">
 					<?php
 					while($row = $stmt5->fetch()) {
@@ -124,43 +124,21 @@ $stmt5->execute();
 			</main>
 			<aside>
 				<h3>Social Media</h3>
-					<ul>
-						<li><a href="https://twitter.com/SheridanIMM">Twitter</a></li>
-						<li><a href="https://www.facebook.com/sheridanIMM">Facebook</a></li>
-					</ul>
-				<h3>Featured Video</h3>
-				<iframe width="100%" src="https://www.youtube.com/embed/rSFNpJJeo4c" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-				<h3>Visitors</h3>
-				<table border="1">
-					<tr>
-						<td><strong>Month</strong></td>
-						<td><strong>Visitors</strong></td>
-					</tr>
-					<tr>
-						<td>May</td>
-						<td>58</td>
-					</tr>
-					<tr>
-						<td>June</td>
-						<td>80</td>
-					</tr>
-					<tr>
-						<td>July</td>
-						<td>165</td>
-					</tr>
-					<tr>
-						<td>August</td>
-						<td>247</td>
-					</tr>
-					<tr>
-						<td>September</td>
-						<td>394</td>
-					</tr>
-					<tr>
-						<td>October</td>
-						<td>536</td>
-					</tr>
-				</table>
+					<div id="social-links">
+						<a href="https://twitter.com/SheridanIMM">Twitter</a>
+						<a href="https://www.facebook.com/sheridanIMM">Facebook</a>
+					</div>
+
+					<h3>Featured Video</h3>
+					<iframe width="100%" src="https://www.youtube.com/embed/rSFNpJJeo4c" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+					<h3>Visitors</h3>
+					<table id="visitors" border="1">
+						<tr>
+							<td><strong>Month</strong></td>
+							<td><strong>Visitors</strong></td>
+						</tr>
+					</table>
 			</aside>
 		</div>
 		<footer>
@@ -168,10 +146,10 @@ $stmt5->execute();
 				<p>&copy;2018 IMM News Network</p>
 			</div>
 			<div id="cookies">
-				<p>IMM News Network uses cookies in order to give you the best user experience. By continuing to browse our website, we assume that you consent to our Cookie Policy.</p>
-				<a href="#">Accept Cookies</a>
+				<p id="msg">IMM News Network uses cookies in order to give you the best user experience. By continuing to browse our website, we assume that you consent to our Cookie Policy. <a id="btn" href="#">Accept Cookies</a></p>
 			</div>
 		</footer>
+		<script src="js/script.js"></script>
 	</body>
 </html>
 
