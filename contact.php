@@ -25,11 +25,12 @@ $pdo = new PDO($dsn, $dbusername, $dbpassword);
 
 		<link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32">
 		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" media="screen and (max-width: 480px)" href="css/small.css" />
 	</head>
 	<body>
 		<header>
 			<a href="front.php"><img id="logo" src="images/logo_white.png" /></a>
-			<nav>
+			<nav class="desktop">
 				<ul>
 					<li><a href="front.php">Home</a></li>
 					<li><a href="about.php">About</a></li>
@@ -40,76 +41,81 @@ $pdo = new PDO($dsn, $dbusername, $dbpassword);
 					<li><a href="logout.php">Log out</a></li>
 				</ul>
 			</nav>
+			<nav class="mobile">
+				<img src="images/menu.svg" />
+			</nav>
 		</header>
-		<main>
-			<h1>Contact Us</h1>
-			<form action="process-contact.php" method="POST">
-				<fieldset>
-					First name:<input type="text" name="firstName" required/>
-					Last name:<input type="text" name="lastName" required/>
-					Email:<input type="email" name="email" required/>
-				</fieldset>
-				Subject:<input type="text" name="subject" />
-				Message:<textarea name="message"></textarea>
-				<fieldset>
-					<legend>Interests:</legend>
-					<input type="checkbox" name="interest" value="tech" />Tech
-					<input type="checkbox" name="interest" value="industry" />Industry
-					<input type="checkbox" name="interest" value="design" />Design
-				</fieldset>
-				<fieldset>
-					<legend>Your role:</legend>
-					<input type="radio" name="role" value="writer">Writer
-					<input type="radio" name="role" value="contributor">Contributor
-					<input type="radio" name="role" value="administrator">Administrator
-				</fieldset>
-				<input type="submit" />
-			</form>
-		</main>
-		<aside>
-			<h3>Social Media</h3>
-			<ul>
-				<li><a href="https://twitter.com/SheridanIMM">Twitter</a></li>
-				<li><a href="https://www.facebook.com/sheridanIMM">Facebook</a></li>
-			</ul>
+		<div class="container">
+			<main>
+				<h1>Contact Us</h1>
+				<form action="process-contact.php" method="POST">
+					<fieldset>
+						First name:<input type="text" name="firstName" required/>
+						Last name:<input type="text" name="lastName" required/>
+						Email:<input type="email" name="email" required/>
+					</fieldset>
+					Subject:<input type="text" name="subject" />
+					Message:<textarea name="message"></textarea>
+					<fieldset>
+						<legend>Interests:</legend>
+						<input type="checkbox" name="interest" value="tech" />Tech
+						<input type="checkbox" name="interest" value="industry" />Industry
+						<input type="checkbox" name="interest" value="design" />Design
+					</fieldset>
+					<fieldset>
+						<legend>Your role:</legend>
+						<input type="radio" name="role" value="writer">Writer
+						<input type="radio" name="role" value="contributor">Contributor
+						<input type="radio" name="role" value="administrator">Administrator
+					</fieldset>
+					<input type="submit" />
+				</form>
+			</main>
+			<aside>
+				<h3>Social Media</h3>
+				<ul>
+					<li><a href="https://twitter.com/SheridanIMM">Twitter</a></li>
+					<li><a href="https://www.facebook.com/sheridanIMM">Facebook</a></li>
+				</ul>
 
-			<h3>Visitors</h3>
-			<table border="1">
-				<tr>
-					<td><strong>Month</strong></td>
-					<td><strong>Visitors</strong></td>
-				</tr>
-				<tr>
-					<td>May</td>
-					<td>58</td>
-				</tr>
-				<tr>
-					<td>June</td>
-					<td>80</td>
-				</tr>
-				<tr>
-					<td>July</td>
-					<td>165</td>
-				</tr>
-				<tr>
-					<td>August</td>
-					<td>247</td>
-				</tr>
-				<tr>
-					<td>September</td>
-					<td>394</td>
-				</tr>
-				<tr>
-					<td>October</td>
-					<td>536</td>
-				</tr>
-			</table>
-		</aside>
+				<h3>Visitors</h3>
+				<table border="1">
+					<tr>
+						<td><strong>Month</strong></td>
+						<td><strong>Visitors</strong></td>
+					</tr>
+					<tr>
+						<td>May</td>
+						<td>58</td>
+					</tr>
+					<tr>
+						<td>June</td>
+						<td>80</td>
+					</tr>
+					<tr>
+						<td>July</td>
+						<td>165</td>
+					</tr>
+					<tr>
+						<td>August</td>
+						<td>247</td>
+					</tr>
+					<tr>
+						<td>September</td>
+						<td>394</td>
+					</tr>
+					<tr>
+						<td>October</td>
+						<td>536</td>
+					</tr>
+				</table>
+			</aside>
+		</div>
 		<footer>
-			<div>
+			<div id="copyright">
 				<p>&copy;2018 IMM News Network</p>
 			</div>
-			<div>
+			<div id="cookies">
 				<p>IMM News Network uses cookies in order to give you the best user experience. By continuing to browse our website, we assume that you consent to our Cookie Policy.</p>
 				<a href="#">Accept Cookies</a>
 			</div>

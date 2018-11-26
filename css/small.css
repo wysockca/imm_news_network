@@ -1,0 +1,103 @@
+body{
+	padding-top: 100px;
+  	padding-bottom: 200px;
+  	font-size: 18px;
+}
+
+.container{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+  	grid-gap: 10px;
+}
+
+.hero{
+	grid-column: 1 / -1;
+  	grid-row: 1;
+  	justify-self: center;
+  	text-align: center;
+}
+
+main{
+	grid-column: 1 / -1;
+	grid-row: 2;
+}
+
+.hero p, main p{
+	line-height: 1.5em;
+}
+
+aside{
+	grid-column: 1 / -1;
+	grid-row: 3;
+}
+
+header{
+	position: fixed; 
+    top: 0;
+    left: 0;
+    right: 0;
+
+  	display: grid;
+	grid-template-columns: 1fr, 1fr;
+  	grid-gap: 10px;
+}
+
+#logo{
+	grid-column: 1;
+  	grid-row: 1;
+  	width: 30%;
+}
+
+nav{
+	grid-column: 2;
+	grid-row: 1;
+	align-self: end;
+}
+
+.desktop{
+	display: none;
+}
+
+footer{
+	position: fixed; 
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+	display: grid;
+	grid-template-columns: 1fr;
+  	grid-column-gap: 5px;
+
+  	font-size: 12px;
+}
+
+#copyright{
+	grid-column: 1;
+  	grid-row: 2;
+}
+
+#cookies{
+	grid-column: 1;
+	grid-row: 1;
+}
+
+#categories{
+	display: grid;
+	grid-template-columns: 1fr;
+  	grid-gap: 10px;
+}
+
+#tech{
+	grid-column: 1;
+	grid-row: 1;
+}
+
+#industry{
+	grid-column: 1;
+	grid-row: 2;
+}
+
+#design{
+	grid-column: 1;
+	grid-row: 3;
+}
