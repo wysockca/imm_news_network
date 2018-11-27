@@ -37,14 +37,20 @@ $pdo = new PDO($dsn, $dbusername, $dbpassword);
 					<li><a href="front.php">Home</a></li>
 					<li><a href="about.php">About</a></li>
 					<li><a href="contact.php">Contact</a></li>
+					<?php if($_SESSION['logged-in'] == false){ ?>
 					<li><a href="login.php">Login</a></li>
 					<li><a href="signup.php">Sign Up</a></li>
+					<?php } ?>
+					<?php if($_SESSION['logged-in'] == true && $_SESSION['role'] == 'admin' || $_SESSION['role'] == 'author'){ ?>
 					<li><a href="dashboard.php">Dashboard</a></li>
+					<?php } ?>
+					<?php if($_SESSION['logged-in'] == true){ ?>
 					<li><a href="logout.php">Log out</a></li>
+					<?php } ?>
 				</ul>
 			</nav>
 			<nav class="mobile">
-				<img src="images/menu.svg" />
+				<a href="#"><img src="images/menu.png" /></a>
 			</nav>
 		</header>
 		<div class="container">
@@ -58,44 +64,19 @@ $pdo = new PDO($dsn, $dbusername, $dbpassword);
 				</form>
 			</main>
 			<aside>
-				<h3>Social Media</h3>
-					<div id="social-links">
-						<a href="https://twitter.com/SheridanIMM">Twitter</a>
-						<a href="https://www.facebook.com/sheridanIMM">Facebook</a>
+				<h3>Accessibility</h3>
+					<div id="hContrastOn">
+						<a href="#" id="onBtn">Turn on high contrast mode</a>
 					</div>
 
 					<h3>Featured Video</h3>
 					<iframe width="100%" src="https://www.youtube.com/embed/rSFNpJJeo4c" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 					<h3>Visitors</h3>
-					<table border="1">
+					<table id="visitors" border="1">
 						<tr>
 							<td><strong>Month</strong></td>
 							<td><strong>Visitors</strong></td>
-						</tr>
-						<tr>
-							<td>May</td>
-							<td>58</td>
-						</tr>
-						<tr>
-							<td>June</td>
-							<td>80</td>
-						</tr>
-						<tr>
-							<td>July</td>
-							<td>165</td>
-						</tr>
-						<tr>
-							<td>August</td>
-							<td>247</td>
-						</tr>
-						<tr>
-							<td>September</td>
-							<td>394</td>
-						</tr>
-						<tr>
-							<td>October</td>
-							<td>536</td>
 						</tr>
 					</table>
 			</aside>

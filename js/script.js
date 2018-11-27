@@ -1,7 +1,8 @@
+//cookies alert
 var update = document.getElementById("btn");
 var cookieMsg = document.getElementById("msg");
 
-btn.addEventListener("click", changeText, false);
+update.addEventListener("click", changeText, false);
 
 function changeText(e){
 	cookieMsg.innerHTML = "Cookies were accepted. Would you like to revoke? ";
@@ -11,6 +12,7 @@ function changeText(e){
 	cookieMsg.appendChild(aTag);
 }
 
+//visitors table
 var visitorData = [
 	{month:"May", numVisitors:"58"},
 	{month:"June", numVisitors:"80"},
@@ -20,9 +22,10 @@ var visitorData = [
 	{month:"October", numVisitors:"536"}
 ];
 
-var row = document.createElement("tr");
-
 for(var i = 0; i<visitorData.length; i++){
+
+	var row = document.createElement("tr");
+
 	var monthCol = document.createElement("td");
 	var visitorCol = document.createElement("td");
 
@@ -31,7 +34,40 @@ for(var i = 0; i<visitorData.length; i++){
 
 	row.appendChild(monthCol);
 	row.appendChild(visitorCol);
+
+	document.getElementById("visitors").appendChild(row);
 }
 
-document.getElementById("visitors").appendChild(row);
 console.log(row);
+
+//high contrast 
+var hContrastOn = document.getElementById("hContrastOn");
+var hContrastOff = document.getElementById("hContrastOff");
+var onBtn = document.getElementById("onBtn");
+var offBtn = document.getElementById("offBtn");
+
+onBtn.addEventListener("click", changeStyle, false);
+
+function changeStyle(e){
+	document.body.style.backgroundColor = "#191919";
+	document.body.style.color = "#fff";
+	document.body.style.backgroundImage = "none";
+	document.body.style.lineHeight = "1.5em";
+	document.body.style.letterSpacing = "1px";
+
+	var links = document.getElementsByTagName("a");
+    for(var i=0;i<links.length;i++){
+ 		links[i].style.color = "#f4e542";  
+    } 
+
+    var main = document.getElementsByTagName("main");
+    for(var i=0;i<main.length;i++){
+ 		main[i].style.backgroundColor = "#000"; 
+ 		main[i].style.padding = "30px"; 
+    }
+
+    var articles = document.getElementsByTagName("article");
+    for(var i=0;i<articles.length;i++){
+ 		articles[i].style.backgroundColor = "#000";  
+    }
+};

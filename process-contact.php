@@ -14,10 +14,14 @@ $dbpassword = "sxRaM*y74c4";
 
 $pdo = new PDO($dsn, $dbusername, $dbpassword);
 
-$stmt = $pdo->prepare("INSERT INTO `contact` (`id`, `firstName`, `lastName`, `email`, `subject`, `message`, `interest`, `role`) VALUES (NULL, '$firstName', '$lastName', '$email', '$subject', $message', '$interest', '$role'); ");
+$stmt = $pdo->prepare("INSERT INTO `contact` (`id`, `firstName`, `lastName`, `email`, `subject`, `message`, `interest`, `role`) VALUES (NULL, '$firstName', '$lastName', '$email', '$subject', '$message', '$interest', '$role'); ");
 
 $stmt->execute();
 
-header("Location: contact-thank-you.php");
+// header("Location: contact-thank-you.php");
+
+$results = $stmt->fetchAll(PDO::FETCH_ASSOC); //fetching all of the rows as an array
+$json = json_encode($results);
+echo($json);
 
 ?>

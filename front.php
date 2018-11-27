@@ -52,14 +52,20 @@ $stmt5->execute();
 					<li><a href="front.php">Home</a></li>
 					<li><a href="about.php">About</a></li>
 					<li><a href="contact.php">Contact</a></li>
+					<?php if($_SESSION['logged-in'] == false){ ?>
 					<li><a href="login.php">Login</a></li>
 					<li><a href="signup.php">Sign Up</a></li>
+					<?php } ?>
+					<?php if($_SESSION['logged-in'] == true && $_SESSION['role'] == 'admin' || $_SESSION['role'] == 'author'){ ?>
 					<li><a href="dashboard.php">Dashboard</a></li>
+					<?php } ?>
+					<?php if($_SESSION['logged-in'] == true){ ?>
 					<li><a href="logout.php">Log out</a></li>
+					<?php } ?>
 				</ul>
 			</nav>
 			<nav class="mobile">
-				<img src="images/menu.svg" />
+				<a href="#"><img src="images/menu.png" /></a>
 			</nav>
 		</header>
 		<div class="container">
@@ -123,10 +129,9 @@ $stmt5->execute();
 				</section>
 			</main>
 			<aside>
-				<h3>Social Media</h3>
-					<div id="social-links">
-						<a href="https://twitter.com/SheridanIMM">Twitter</a>
-						<a href="https://www.facebook.com/sheridanIMM">Facebook</a>
+				<h3>Accessibility</h3>
+					<div id="hContrastOn">
+						<a href="#" id="onBtn">Turn on high contrast mode</a>
 					</div>
 
 					<h3>Featured Video</h3>
