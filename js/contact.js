@@ -43,5 +43,7 @@ function addMsgFunction(e) {
 		"&role=" + adminInput.value); 
 
 	contactForm.removeFrom();
-	document.getElementById("msgSent").style.display = "block";
+	var newPTag = document.createElement("p");
+	newPTag.innerHTML = "Your message has been sent. We will get back to you shortly.";
+	document.getElementById("msgPg").appendChild(newPTag);
 }

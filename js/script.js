@@ -43,9 +43,7 @@ console.log(row);
 
 //high contrast 
 var hContrastOn = document.getElementById("hContrastOn");
-var hContrastOff = document.getElementById("hContrastOff");
 var onBtn = document.getElementById("onBtn");
-var offBtn = document.getElementById("offBtn");
 
 onBtn.addEventListener("click", changeStyle, false);
 
@@ -71,4 +69,6 @@ function changeStyle(e){
     for(var i=0;i<articles.length;i++){
  		articles[i].style.backgroundColor = "#000";  
     }
+
+    onBtn.innerHTML = "Turn off high contrast mode";
 };

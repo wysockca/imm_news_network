@@ -52,7 +52,7 @@ $pdo = new PDO($dsn, $dbusername, $dbpassword);
 			</nav>
 		</header>
 		<div class="container">
-			<main>
+			<main id="msgPg">
 				<h1>Contact Us</h1>
 				<form id="contactForm" method="POST">
 					<fieldset>
