@@ -12,6 +12,7 @@ function changeText(e){
 	cookieMsg.appendChild(aTag);
 }
 
+
 //visitors table
 var visitorData = [
 	{month:"May", numVisitors:"58"},
