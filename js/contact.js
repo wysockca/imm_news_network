@@ -1,5 +1,5 @@
 //contact form
-//var contactForm = document.getElementById("contactForm");
+var contactForm = document.getElementById("contactForm");
 
 var sendMsgBtn = document.getElementById("sendMsgBtn");
 sendMsgBtn.addEventListener("click", addMsgFunction, false);
@@ -42,6 +42,6 @@ function addMsgFunction(e) {
 		"&role=" + contribInput.value+
 		"&role=" + adminInput.value); 
 
-	form.removeFrom();
+	contactForm.removeFrom();
 	document.getElementById("msgSent").style.display = "block";
 }

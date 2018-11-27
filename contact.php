@@ -71,9 +71,9 @@ $pdo = new PDO($dsn, $dbusername, $dbpassword);
 					</fieldset>
 					<fieldset>
 						<label>Interests:</label>
-						<input type="checkbox" name="tech" value="tech" id="techInput" />Tech
-						<input type="checkbox" name="industry" value="industry" id="indInput" />Industry
-						<input type="checkbox" name="design" value="design" id="desInput" />Design
+						<input type="checkbox" name="tech" value="1" id="techInput" />Tech
+						<input type="checkbox" name="industry" value="1" id="indInput" />Industry
+						<input type="checkbox" name="design" value="1" id="desInput" />Design
 					</fieldset>
 					<fieldset>
 						<label>Your role:</label>
@@ -97,9 +97,9 @@ $pdo = new PDO($dsn, $dbusername, $dbpassword);
 					Message:<textarea name="message"></textarea>
 					<fieldset>
 						<legend>Interests:</legend>
-						<input type="checkbox" name="interest" value="tech" />Tech
-						<input type="checkbox" name="interest" value="industry" />Industry
-						<input type="checkbox" name="interest" value="design" />Design
+						<input type="checkbox" name="tech" value="1" id="techInput" />Tech
+						<input type="checkbox" name="industry" value="1" id="indInput" />Industry
+						<input type="checkbox" name="design" value="1" id="desInput" />Design
 					</fieldset>
 					<fieldset>
 						<legend>Your role:</legend>
