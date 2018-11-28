@@ -1,10 +1,10 @@
 //contact form
 var contactForm = document.getElementById("contactForm");
 
-var sendMsgBtn = document.getElementById("sendMsgBtn");
-sendMsgBtn.addEventListener("click", addMsgFunction, false);
+contactForm.addEventListener("submit", addMsgFunction, false);
 
 function addMsgFunction(e) {
+	e.preventDefault();
 	var myRequest = new XMLHttpRequest; 
 	myRequest.onreadystatechange = function(){     
 	    
@@ -30,19 +30,31 @@ function addMsgFunction(e) {
 	myRequest.open("POST", "process-contact.php", true); //true means it is asynchronous // Send urls through the url
 	myRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
+	// console.log("firstName=" + fNameInput.value+
+	// 	"&lastName=" + lNameInput.value+
+	// 	"&email=" + emailInput.value+
+	// 	"&subject=" + subjectInput.value+
+	// 	"&message=" + msgInput.value+
+	// 	"&tech=" + techInput.checked+
+	// 	"&industry=" + indInput.checked+
+	// 	"&design=" + desInput.checked+
+	// 	"&writerrole=" + writerInput.checked+
+	// 	"&contribrole=" + contribInput.checked+
+	// 	"&adminrole=" + adminInput.checked);
+
 	myRequest.send("firstName=" + fNameInput.value+
 		"&lastName=" + lNameInput.value+
 		"&email=" + emailInput.value+
 		"&subject=" + subjectInput.value+
 		"&message=" + msgInput.value+
-		"&tech=" + techInput.value+
-		"&industry=" + indInput.value+
-		"&design=" + desInput.value+
-		"&role=" + writerInput.value+
-		"&role=" + contribInput.value+
-		"&role=" + adminInput.value); 
+		"&tech=" + techInput.checked+
+		"&industry=" + indInput.checked+
+		"&design=" + desInput.checked+
+		"&role=" + writerInput.checked+
+		"&role=" + contribInput.checked+
+		"&role=" + adminInput.checked); 
 
-	contactForm.removeFrom();
+	contactForm.remove();
 	var newPTag = document.createElement("p");
 	newPTag.innerHTML = "Your message has been sent. We will get back to you shortly.";
 	document.getElementById("msgPg").appendChild(newPTag);

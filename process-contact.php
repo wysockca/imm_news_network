@@ -8,7 +8,9 @@ $message = $_POST['message'];
 $tech = $_POST['tech'];
 $industry = $_POST['industry'];
 $design = $_POST['design'];
-$role = $_POST['role'];
+$writerrole = $_POST['role'];
+$contribrole = $_POST['role'];
+$adminrole = $_POST['role'];
 
 $dsn = "mysql:host=localhost;dbname=wysockca_imm_news_network;charset=utf8mb4";
 $dbusername = "wysockca";
@@ -16,7 +18,7 @@ $dbpassword = "sxRaM*y74c4";
 
 $pdo = new PDO($dsn, $dbusername, $dbpassword);
 
-$stmt = $pdo->prepare("INSERT INTO `contact` (`id`, `firstName`, `lastName`, `email`, `subject`, `message`, `tech`, `industry`, `design`, `role`) VALUES (NULL, '$firstName', '$lastName', '$email', '$subject', '$message', '$tech', '$industry', '$design', '$role'); ");
+$stmt = $pdo->prepare("INSERT INTO `contact` (`id`, `firstName`, `lastName`, `email`, `subject`, `message`, `tech`, `industry`, `design`, `role`) VALUES (NULL, '$firstName', '$lastName', '$email', '$subject', '$message', '$tech', '$industry', '$design', '$writerrole', '$contribrole', '$adminrole'); ");
 
 $stmt->execute();
 

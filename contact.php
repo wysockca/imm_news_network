@@ -57,11 +57,11 @@ $pdo = new PDO($dsn, $dbusername, $dbpassword);
 				<form id="contactForm" method="POST">
 					<fieldset>
 						<label>First name:</label>
-						<input type="text" name="firstName" id="fNameInput" required/>
+						<input type="text" name="firstName" id="fNameInput" value="s" required/>
 						<label>Last name:</label>
-						<input type="text" name="lastName" id="lNameInput" required/>
+						<input type="text" name="lastName" id="lNameInput" value="s" required/>
 						<label>Email:</label>
-						<input type="email" name="email" id="emailInput" required/>
+						<input type="email" name="email" id="emailInput" value="s@sss.com"required/>
 					</fieldset>
 					<fieldset>
 						<label>Subject:</label>
@@ -77,9 +77,9 @@ $pdo = new PDO($dsn, $dbusername, $dbpassword);
 					</fieldset>
 					<fieldset>
 						<label>Your role:</label>
-						<input type="radio" name="role" value="writer" id="writerInput">Writer
-						<input type="radio" name="role" value="contributor" id="contribInput">Contributor
-						<input type="radio" name="role" value="administrator" id="adminInput">Administrator
+						<input type="radio" name="writerrole" value="writer" id="writerInput">Writer
+						<input type="radio" name="contribrole" value="contributor" id="contribInput">Contributor
+						<input type="radio" name="adminrole" value="administrator" id="adminInput">Administrator
 					</fieldset>
 					<input type="submit" value="Send" id="sendMsgBtn" />
 				</form>
