@@ -50,9 +50,9 @@ function addMsgFunction(e) {
 		"&tech=" + techInput.checked+
 		"&industry=" + indInput.checked+
 		"&design=" + desInput.checked+
-		"&role=" + writerInput.checked+
-		"&role=" + contribInput.checked+
-		"&role=" + adminInput.checked); 
+		"&writerrole=" + writerInput.checked+
+		"&contribrole=" + contribInput.checked+
+		"&adminrole=" + adminInput.checked); 
 
 	contactForm.remove();
 	var newPTag = document.createElement("p");
