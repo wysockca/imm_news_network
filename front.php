@@ -65,7 +65,22 @@ $stmt5->execute();
 				</ul>
 			</nav>
 			<nav class="mobile">
-				<a href="#"><img src="images/menu.png" /></a>
+				<a id="dropBtn" href="#"><img src="images/menu.png" /></a>
+				<div id="dropMenu">
+					<a href="front.php">Home</a>
+					<a href="about.php">About</a>
+					<a href="contact.php">Contact</a>
+					<?php if($_SESSION['logged-in'] == false){ ?>
+					<a href="login.php">Login</a>
+					<a href="signup.php">Sign Up</a>
+					<?php } ?>
+					<?php if($_SESSION['logged-in'] == true && $_SESSION['role'] == 'admin' || $_SESSION['role'] == 'author'){ ?>
+					<a href="dashboard.php">Dashboard</a>
+					<?php } ?>
+					<?php if($_SESSION['logged-in'] == true){ ?>
+					<a href="logout.php">Log out</a>
+					<?php } ?>
+				</div>
 			</nav>
 		</header>
 		<div class="container">
