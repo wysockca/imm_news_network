@@ -8,6 +8,7 @@ function changeText(e){
 	cookieMsg.innerHTML = "Cookies were accepted. Would you like to revoke? ";
 
 	var aTag = document.createElement("a");
+	aTag.setAttribute("id", "btnRevoke")
 	aTag.innerHTML = "Yes, revoke.";
 	cookieMsg.appendChild(aTag);
 }
@@ -48,6 +49,8 @@ var onBtn = document.getElementById("onBtn");
 onBtn.addEventListener("click", changeStyle, false);
 
 function changeStyle(e){
+	onBtn.innerHTML = "Turn off high contrast mode";
+
 	document.body.style.backgroundColor = "#191919";
 	document.body.style.color = "#fff";
 	document.body.style.backgroundImage = "none";
@@ -70,5 +73,10 @@ function changeStyle(e){
  		articles[i].style.backgroundColor = "#000";  
     }
 
-    onBtn.innerHTML = "Turn off high contrast mode";
+    var formBg = document.getElementById("formStyle");
+    formBg.style.backgroundColor = "#000";
+
+    var table = document.getElementById("visitors");
+    table.style.color = "#000";
+    
 };

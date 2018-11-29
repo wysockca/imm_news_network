@@ -36,26 +36,23 @@ $row = $stmt->fetch();
 	</head>
 	<body>
 		<header>
-			<a href="../front.php"><img src="../images/logo_white.png" width="20%" /></a>
-			<nav class="desktop">
-				<ul>
-					<li><a href="../front.php">Home</a></li>
-					<li><a href="../about.php">About</a></li>
-					<li><a href="../contact.php">Contact</a></li>
+			<div id="logo-container">
+				<a href="../front.php"><img id="logo" src="../images/logo_white.png" /></a>
+			</div>
+			<nav>
+				<a href="../front.php">Home</a>
+				<a href="../about.php">About</a>
+				<a href="../contact.php">Contact</a>
 					<?php if($_SESSION['logged-in'] == false){ ?>
-					<li><a href="../login.php">Login</a></li>
-					<li><a href="../signup.php">Sign Up</a></li>
+				<a href="../login.php">Login</a>
+				<a href="../signup.php">Sign Up</a>
 					<?php } ?>
 					<?php if($_SESSION['logged-in'] == true && $_SESSION['role'] == 'admin' || $_SESSION['role'] == 'author'){ ?>
-					<li><a href="../dashboard.php">Dashboard</a></li>
+				<a href="../dashboard.php">Dashboard</a>
 					<?php } ?>
 					<?php if($_SESSION['logged-in'] == true){ ?>
-					<li><a href="../logout.php">Log out</a></li>
+				<a href="../logout.php">Log out</a>
 					<?php } ?>
-				</ul>
-			</nav>
-			<nav class="mobile">
-				<a href="#"><img src="../images/menu.png" /></a>
 			</nav>
 		</header>
 		<div class="container">
@@ -84,8 +81,8 @@ $row = $stmt->fetch();
 					<h3>Visitors</h3>
 					<table id="visitors" border="1">
 						<tr>
-							<td><strong>Month</strong></td>
-							<td><strong>Visitors</strong></td>
+							<th><strong>Month</strong></th>
+							<th><strong>Visitors</strong></th>
 						</tr>
 					</table>
 			</aside>

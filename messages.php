@@ -37,8 +37,13 @@ $stmt->execute();
 		<link rel="canonical" href="http://wysockca.dev.fast.sheridanc.on.ca/IMM-web-dev/imm_news_network/front.php" />
 
 		<link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32">
+		<link rel="stylesheet" href="css/dashboard.css">
 	</head>
 	<body>
+		<nav id="top-nav">
+			<a href="front.php">Back to IMM News Network</a>
+			<a href="logout.php">Logout</a>
+		</nav>
 		<a href="dashboard.php">Back to Dashboard</a>
 		<h1>Messages</h1>
 

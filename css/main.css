@@ -24,22 +24,8 @@ h2 > a, h3 > a{
 	text-decoration: none;
 }
 
-ul {
-	display: flex;
-	justify-content: flex-end;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-/*#social-links{
-	display: flex;
-	justify-content: space-around;
-
-}*/
-
-li{
-	padding-left: 20px;
+nav a {
+    padding-left: 20px;
 }
 
 main, article{
@@ -73,20 +59,22 @@ header{
   	grid-gap: 10px;
 }
 
-#logo{
+#logo-container{
 	grid-column: 1;
   	grid-row: 1;
-  	width: 30%;
+}
+
+#logo{
+	width: 30%;
 }
 
 nav{
 	grid-column: 2;
 	grid-row: 1;
 	align-self: end;
-}
 
-.mobile{
-	display: none;
+	display: flex;
+	justify-content: flex-end;
 }
 
 .hero{
@@ -180,4 +168,118 @@ nav a:hover{
 footer a{
 	color: #fff;
 	text-decoration: underline;
+}
+
+#visitors{
+	border-collapse: collapse;
+    width: 100%;
+}
+
+#visitors th {
+    padding: 10px;
+    background-color: #734f91;
+    color: #fff;
+    text-align: left;
+}
+
+#visitors td, #visitors th {
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+
+#visitors tr:nth-child(even){
+	background-color: #f2f2f2;
+}
+
+#visitors tr:nth-child(odd){
+	background-color: #fff;
+}
+
+
+form{
+	grid-column: 1 / 5;
+	grid-row: 2;
+
+	display: grid;
+	grid-template-columns: 1fr, 1fr;
+  	grid-gap: 20px;
+}
+
+.row1{
+	grid-column: 1 / 3;
+	grid-row: 1;
+}
+
+.row1a{
+	grid-column: 1;
+	grid-row: 1;
+}
+
+.row1b{
+	grid-column: 2;
+	grid-row: 1;
+}
+
+.row2{
+	grid-column: 1 / 3;
+	grid-row: 2;
+}
+
+.row3{
+	grid-column: 1 / 3;
+	grid-row: 3;
+}
+
+.row4{
+	grid-column: 1 / 3;
+	grid-row: 4;
+}
+
+.row5{
+	grid-column: 1 / 3;
+	grid-row: 5;
+}
+
+.row6{
+	grid-column: 1 / 3;
+	grid-row: 6;
+}
+
+.row7{
+	grid-column: 1 / 3;
+	grid-row: 7;
+}
+
+#formStyle{
+	width: 80%;
+	padding: 20px;
+	background-color: #f2f2f2; 
+}
+
+input[type=text],input[type=email], input[type=password], textarea{
+	width: 100%;
+	font-size: 16px;
+	font-family: 'Rubik', sans-serif;
+}
+
+textarea{
+	height: 100px;
+}
+
+input[type=submit] {
+	border: none;
+    width: 100%;
+    padding: 10px;
+    background-color: #734f91;
+    color: #fff;
+    font-size: 16px;
+	font-family: 'Rubik', sans-serif;
+
+	transition-property: background;
+  	transition-duration: 1s;
+  	transition-timing-function: linear;
+}
+
+input[type=submit]:hover {
+	background: #ae7ed6;
 }

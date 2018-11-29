@@ -46,41 +46,23 @@ $stmt5->execute();
 	</head>
 	<body>
 		<header>
-			<a href="front.php"><img id="logo" src="images/logo_white.png" /></a>
-			<nav class="desktop">
-				<ul>
-					<li><a href="front.php">Home</a></li>
-					<li><a href="about.php">About</a></li>
-					<li><a href="contact.php">Contact</a></li>
+			<div id="logo-container">
+				<a href="front.php"><img id="logo" src="images/logo_white.png" /></a>
+			</div>
+			<nav>
+				<a href="front.php">Home</a>
+				<a href="about.php">About</a>
+				<a href="contact.php">Contact</a>
 					<?php if($_SESSION['logged-in'] == false){ ?>
-					<li><a href="login.php">Login</a></li>
-					<li><a href="signup.php">Sign Up</a></li>
+				<a href="login.php">Login</a>
+				<a href="signup.php">Sign Up</a>
 					<?php } ?>
 					<?php if($_SESSION['logged-in'] == true && $_SESSION['role'] == 'admin' || $_SESSION['role'] == 'author'){ ?>
-					<li><a href="dashboard.php">Dashboard</a></li>
+				<a href="dashboard.php">Dashboard</a>
 					<?php } ?>
 					<?php if($_SESSION['logged-in'] == true){ ?>
-					<li><a href="logout.php">Log out</a></li>
+				<a href="logout.php">Log out</a>
 					<?php } ?>
-				</ul>
-			</nav>
-			<nav class="mobile">
-				<a id="dropBtn" href="#"><img src="images/menu.png" /></a>
-				<div id="dropMenu">
-					<a href="front.php">Home</a>
-					<a href="about.php">About</a>
-					<a href="contact.php">Contact</a>
-					<?php if($_SESSION['logged-in'] == false){ ?>
-					<a href="login.php">Login</a>
-					<a href="signup.php">Sign Up</a>
-					<?php } ?>
-					<?php if($_SESSION['logged-in'] == true && $_SESSION['role'] == 'admin' || $_SESSION['role'] == 'author'){ ?>
-					<a href="dashboard.php">Dashboard</a>
-					<?php } ?>
-					<?php if($_SESSION['logged-in'] == true){ ?>
-					<a href="logout.php">Log out</a>
-					<?php } ?>
-				</div>
 			</nav>
 		</header>
 		<div class="container">
@@ -153,10 +135,10 @@ $stmt5->execute();
 					<iframe width="100%" src="https://www.youtube.com/embed/rSFNpJJeo4c" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 					<h3>Visitors</h3>
-					<table id="visitors" border="1">
+					<table id="visitors">
 						<tr>
-							<td><strong>Month</strong></td>
-							<td><strong>Visitors</strong></td>
+							<th>Month</th>
+							<th>Visitors</th>
 						</tr>
 					</table>
 			</aside>

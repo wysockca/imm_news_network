@@ -24,9 +24,14 @@ $pdo = new PDO($dsn, $dbusername, $dbpassword);
 		<link rel="canonical" href="http://wysockca.dev.fast.sheridanc.on.ca/IMM-web-dev/imm_news_network/front.php" />
 
 		<link rel="icon" type="image/png" href="../images/favicon-32x32.png" sizes="32x32">
-
+		<link rel="stylesheet" href="../css/dashboard.css">
 	</head>
 	<body>
+		<nav id="top-nav">
+			<a href="../front.php">Back to IMM News Network</a>
+			<a href="../logout.php">Logout</a>
+		</nav>
+		<h1>Create New Article</h1>
 		<form action="process-article-submit.php" enctype="multipart/form-data" method="POST">    
 			 <p>Author:<input type="text" name="author" /></p>
 			 <p>Headline:<input type="text" name="headline" /></p>

@@ -36,36 +36,43 @@ $stmt->execute();
 		<link rel="canonical" href="http://wysockca.dev.fast.sheridanc.on.ca/IMM-web-dev/imm_news_network/front.php" />
 
 		<link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32">
+		<link rel="stylesheet" href="css/dashboard.css">
 	</head>
 	<body>
-		<a href="front.php">Back to IMM News Network</a> <a href="logout.php">Logout</a>
-		<h1>Dashboard</h1>
-		<p><a href="articles/article-submit.php">Create New Article</a></p>
-		<p><a href="welcome-edit.php">Edit Welcome Message</a>
-		<a href="about-edit.php">Edit About Page</a></p>
-		<p><a href="messages.php">View Messages</a></p>
+		<nav id="top-nav">
+			<a href="front.php">Back to IMM News Network</a>
+			<a href="logout.php">Logout</a>
+		</nav>
+		<main>
+			<h1>Dashboard</h1>
+				<nav id="main-nav">
+				<a href="articles/article-submit.php">Create New Article</a>
+				<a href="welcome-edit.php">Edit Welcome Message</a>
+				<a href="about-edit.php">Edit About Page</a>
+				<a href="messages.php">View Messages</a>
+			</nav>
 
-		<section id="article-list">
-			<h2>Articles</h2>
+			<section id="article-list">
+				<h2>Articles</h2>
 
-			<?php
-			//show records (process results)
-			while($row = $stmt->fetch()) {     
-				//echo($row["email"]); //or $row[0];
-				?><div>
-					<h3><?php echo($row["headline"]);?></h3>
-					<p>By: <?php echo($row["author"]); ?></p>
-					<span><a href="articles/article.php?id=<?php echo($row["id"]);?>">View</a></span>
-					<span><a href="articles/article-edit.php?id=<?php echo($row["id"]);?>">Edit</a></span>
-					<span><a href="articles/article-delete.php?id=<?php echo($row["id"]);?>">Delete</a></span>
-					
-					<br>
-					<br>
-				</div>
-			<?php }
-			?>
-		</section>
-		
+				<?php
+				//show records (process results)
+				while($row = $stmt->fetch()) {     
+					//echo($row["email"]); //or $row[0];
+					?><div>
+						<h3><?php echo($row["headline"]);?></h3>
+						<p>By: <?php echo($row["author"]); ?></p>
+						<span><a href="articles/article.php?id=<?php echo($row["id"]);?>">View</a></span>
+						<span><a href="articles/article-edit.php?id=<?php echo($row["id"]);?>">Edit</a></span>
+						<span><a href="articles/article-delete.php?id=<?php echo($row["id"]);?>">Delete</a></span>
+						
+						<br>
+						<br>
+					</div>
+				<?php }
+				?>
+			</section>
+		</main>
 	</body>
 </html>
 

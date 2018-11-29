@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik:400,400i,500,700');
+
+body{
+	background-image: url("../images/wavy-dots.png");
+	background-color: #dcdcdc;
+	font-size: 16px;
+	font-family: 'Rubik', sans-serif;
+	font-weight: 400;
+	padding-top: 50px;
+}
+
+h1, h2, h3{
+	font-family: 'Rubik', sans-serif;
+	font-weight: 700;
+}
+
+#top-nav{
+	background-color: #000;
+	padding: 20px;
+	display: flex;
+	justify-content: space-between;
+
+	top: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+}
+
+#top-nav a{
+	color: #fff;
+	text-decoration: none;
+}
+
+#top-nav a:hover{
+	color: #fff;
+	text-decoration: underline;
+}
+
+#main-nav{
+	display: flex;
+}
+
+#main-nav a{
+	font-size: 18px;
+	font-weight: 500;
+	padding-right: 20px;
+	text-decoration: none;
+}
+
+a{
+	color: #000;
+}
+
+a:hover{
+	color: #734f91;
+}
+
+main{
+	padding:20px;
+}

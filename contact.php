@@ -29,63 +29,66 @@ $pdo = new PDO($dsn, $dbusername, $dbpassword);
 	</head>
 	<body>
 		<header>
-			<a href="front.php"><img id="logo" src="images/logo_white.png" /></a>
-			<nav class="desktop">
-				<ul>
-					<li><a href="front.php">Home</a></li>
-					<li><a href="about.php">About</a></li>
-					<li><a href="contact.php">Contact</a></li>
+			<div id="logo-container">
+				<a href="front.php"><img id="logo" src="images/logo_white.png" /></a>
+			</div>
+			<nav>
+				<a href="front.php">Home</a>
+				<a href="about.php">About</a>
+				<a href="contact.php">Contact</a>
 					<?php if($_SESSION['logged-in'] == false){ ?>
-					<li><a href="login.php">Login</a></li>
-					<li><a href="signup.php">Sign Up</a></li>
+				<a href="login.php">Login</a>
+				<a href="signup.php">Sign Up</a>
 					<?php } ?>
 					<?php if($_SESSION['logged-in'] == true && $_SESSION['role'] == 'admin' || $_SESSION['role'] == 'author'){ ?>
-					<li><a href="dashboard.php">Dashboard</a></li>
+				<a href="dashboard.php">Dashboard</a>
 					<?php } ?>
 					<?php if($_SESSION['logged-in'] == true){ ?>
-					<li><a href="logout.php">Log out</a></li>
+				<a href="logout.php">Log out</a>
 					<?php } ?>
-				</ul>
-			</nav>
-			<nav class="mobile">
-				<a href="#"><img src="images/menu.png" /></a>
 			</nav>
 		</header>
 		<div class="container">
 			<main id="msgPg">
 				<h1>Contact Us</h1>
-				<form id="contactForm" method="POST">
-					<fieldset>
-						<label>First name:</label>
-						<input type="text" name="firstName" id="fNameInput" value="s" required/>
-						<label>Last name:</label>
-						<input type="text" name="lastName" id="lNameInput" value="s" required/>
-						<label>Email:</label>
-						<input type="email" name="email" id="emailInput" value="s@sss.com"required/>
-					</fieldset>
-					<fieldset>
-						<label>Subject:</label>
-						<input type="text" name="subject" id="subjectInput" />
-						<label>Message:</label>
-						<textarea name="message" id="msgInput" ></textarea>
-					</fieldset>
-					<fieldset>
-						<label>Interests:</label>
-						<input type="checkbox" name="tech" value="1" id="techInput" />Tech
-						<input type="checkbox" name="industry" value="1" id="indInput" />Industry
-						<input type="checkbox" name="design" value="1" id="desInput" />Design
-					</fieldset>
-					<fieldset>
+				<div id="formStyle">
+					<form id="contactForm" method="POST">
+						<div class="row1a">
+							<label>First name:</label>
+							<input type="text" name="firstName" id="fNameInput" required/>
+						</div>
+						<div class="row1b">
+							<label>Last name:</label>
+							<input type="text" name="lastName" id="lNameInput" required/>
+						</div>
+						<div class="row2">
+							<label>Email:</label>
+							<input type="email" name="email" id="emailInput" required/>
+						</div>
+						<div class="row3">
+							<label>Subject:</label>
+							<input type="text" name="subject" id="subjectInput" />
+						</div>
+						<div class="row4">
+							<label>Message:</label>
+							<textarea name="message" id="msgInput" ></textarea>
+						</div>
+						<div class="row5">
+							<label>Interests:</label>
+							<input type="checkbox" name="tech" value="1" id="techInput" />Tech
+							<input type="checkbox" name="industry" value="1" id="indInput" />Industry
+							<input type="checkbox" name="design" value="1" id="desInput" />Design
+						</div>
+						<div class="row6">
 						<label>Your role:</label>
-						<input type="radio" name="writerrole" value="writer" id="writerInput">Writer
-						<input type="radio" name="contribrole" value="contributor" id="contribInput">Contributor
-						<input type="radio" name="adminrole" value="administrator" id="adminInput">Administrator
-					</fieldset>
-					<input type="submit" value="Send" id="sendMsgBtn" />
-				</form>
-				<div id="msgSent" style="display:none">
-					<h2>Thank You</h2>
-					<p>Your message has been sent. We will get back to you shortly.</p>
+							<input type="radio" name="writerrole" value="1" id="writerInput">Writer
+							<input type="radio" name="contribrole" value="1" id="contribInput">Contributor
+							<input type="radio" name="adminrole" value="1" id="adminInput">Administrator
+						</div>
+						<div class="row7">
+							<input type="submit" value="Send" id="sendMsgBtn" />
+						</div>
+					</form>
 				</div>
 				<!-- <form action="process-contact.php" method="POST">
 					<fieldset>
@@ -120,10 +123,10 @@ $pdo = new PDO($dsn, $dbusername, $dbpassword);
 					<iframe width="100%" src="https://www.youtube.com/embed/rSFNpJJeo4c" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 					<h3>Visitors</h3>
-					<table id="visitors" border="1">
+					<table id="visitors">
 						<tr>
-							<td><strong>Month</strong></td>
-							<td><strong>Visitors</strong></td>
+							<th>Month</th>
+							<th>Visitors</th>
 						</tr>
 					</table>
 			</aside>

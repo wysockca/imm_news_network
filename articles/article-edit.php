@@ -30,8 +30,13 @@ $row = $stmt->fetch();
 		<link rel="canonical" href="http://wysockca.dev.fast.sheridanc.on.ca/IMM-web-dev/imm_news_network/front.php" />
 
 		<link rel="icon" type="image/png" href="../images/favicon-32x32.png" sizes="32x32">
+		<link rel="stylesheet" href="../css/dashboard.css">
 	</head>
 	<body>
+		<nav id="top-nav">
+			<a href="../front.php">Back to IMM News Network</a>
+			<a href="../logout.php">Logout</a>
+		</nav>
 		<h1>Update Article</h1>
 
 		<form action="confirm-article-update.php" enctype="multipart/form-data" method="POST">  

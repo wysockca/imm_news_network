@@ -31,37 +31,44 @@ $pdo = new PDO($dsn, $dbusername, $dbpassword);
 	</head>
 	<body>
 		<header>
-			<a href="front.php"><img id="logo" src="images/logo_white.png" /></a>
-			<nav class="desktop">
-				<ul>
-					<li><a href="front.php">Home</a></li>
-					<li><a href="about.php">About</a></li>
-					<li><a href="contact.php">Contact</a></li>
+			<div id="logo-container">
+				<a href="front.php"><img id="logo" src="images/logo_white.png" /></a>
+			</div>
+			<nav>
+				<a href="front.php">Home</a>
+				<a href="about.php">About</a>
+				<a href="contact.php">Contact</a>
 					<?php if($_SESSION['logged-in'] == false){ ?>
-					<li><a href="login.php">Login</a></li>
-					<li><a href="signup.php">Sign Up</a></li>
+				<a href="login.php">Login</a>
+				<a href="signup.php">Sign Up</a>
 					<?php } ?>
 					<?php if($_SESSION['logged-in'] == true && $_SESSION['role'] == 'admin' || $_SESSION['role'] == 'author'){ ?>
-					<li><a href="dashboard.php">Dashboard</a></li>
+				<a href="dashboard.php">Dashboard</a>
 					<?php } ?>
 					<?php if($_SESSION['logged-in'] == true){ ?>
-					<li><a href="logout.php">Log out</a></li>
+				<a href="logout.php">Log out</a>
 					<?php } ?>
-				</ul>
-			</nav>
-			<nav class="mobile">
-				<a href="#"><img src="images/menu.png" /></a>
 			</nav>
 		</header>
 		<div class="container">
 			<main>
 				<h1>Sign Up</h1>
-				<form action="process-signup.php" method="POST">     
-					 Username:<input type="text" name="username" />
-					 Email:<input type="email" name="email" />
-					 Password:<input type="password" name="password" />
-					<input type="submit" />
-				</form>
+				<div id="formStyle">
+					<form action="process-signup.php" method="POST">
+						<div class="row1">     
+							Username:<input type="text" name="username" />
+						</div>
+						<div class="row2">
+							Email:<input type="email" name="email" />
+						</div>
+						<div class="row3">
+							Password:<input type="password" name="password" />
+						</div>
+						<div class="row4">
+							<input type="submit" />
+						</div>
+					</form>
+				</div>
 			</main>
 			<aside>
 				<h3>Accessibility</h3>
@@ -73,10 +80,10 @@ $pdo = new PDO($dsn, $dbusername, $dbpassword);
 					<iframe width="100%" src="https://www.youtube.com/embed/rSFNpJJeo4c" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 					<h3>Visitors</h3>
-					<table id="visitors" border="1">
+					<table id="visitors">
 						<tr>
-							<td><strong>Month</strong></td>
-							<td><strong>Visitors</strong></td>
+							<th>Month</th>
+							<th>Visitors</th>
 						</tr>
 					</table>
 			</aside>
